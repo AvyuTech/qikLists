@@ -1,0 +1,48 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\DetailView;
+
+/* @var $this yii\web\View */
+/* @var $model app\models\ItemFeeListData */
+
+$this->title = $model->ifld_id;
+$this->params['breadcrumbs'][] = ['label' => 'Item Fee List Datas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="item-fee-list-data-view">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <p>
+        <?= Html::a('Update', ['update', 'id' => $model->ifld_id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->ifld_id], [
+            'class' => 'btn btn-danger',
+            'data' => [
+                'confirm' => 'Are you sure you want to delete this item?',
+                'method' => 'post',
+            ],
+        ]) ?>
+    </p>
+
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            'ifld_id',
+            'ifld_amazon_order_id',
+            'ifld_seller_order_id',
+            'ifld_fee_type',
+            'ifld_fee_amount',
+            'ifld_currency',
+            'ifld_transaction_type',
+            'ifld_item_type',
+            'ifld_shipment_refund_event_id',
+            'created_by',
+            'updated_by',
+            'created_at',
+            'updated_at',
+            'ifld_status',
+        ],
+    ]) ?>
+
+</div>
